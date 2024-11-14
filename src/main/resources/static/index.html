@@ -103,7 +103,6 @@
     let currentPlayer = 'X';
     let gameActive = true;
     let boardState = Array(9).fill(null);
-    //const url = `http://${hostname}:8080/`;
 
     board.addEventListener('click', (event) => {
         const cell = event.target;
@@ -147,7 +146,7 @@
         currentPlayer = 'X';
         status.textContent = "Player X's turn";
         document.querySelectorAll('.cell').forEach(cell => cell.textContent = '');
-        fetch(url+"r");
+        fetch("/r");
     }
 </script>
 
