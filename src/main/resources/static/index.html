@@ -103,7 +103,7 @@
     let currentPlayer = 'X';
     let gameActive = true;
     let boardState = Array(9).fill(null);
-    const url = "http://localhost:8080/";
+    const url = "http://${hostname}:8080/";
 
     board.addEventListener('click', (event) => {
         const cell = event.target;
