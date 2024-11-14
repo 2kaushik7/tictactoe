@@ -103,7 +103,7 @@
     let currentPlayer = 'X';
     let gameActive = true;
     let boardState = Array(9).fill(null);
-    const url = `http://${hostname}:8080/`;
+    //const url = `http://${hostname}:8080/`;
 
     board.addEventListener('click', (event) => {
         const cell = event.target;
@@ -130,7 +130,7 @@
 
     async function checkWin(player, index) {
         try {
-            const response = await fetch(url+index+"/"+player);
+            const response = await fetch("/"+index+"/"+player);
             if (response.ok) {
                 return await response.json();
             }
