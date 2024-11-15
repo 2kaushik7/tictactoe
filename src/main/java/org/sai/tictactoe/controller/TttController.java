@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.*;
 
 @CrossOrigin
-@RestController("/")
+@RestController("/tictactoe")
 public class TttController {
 
     Result result;
