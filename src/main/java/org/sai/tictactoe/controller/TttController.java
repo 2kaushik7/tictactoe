@@ -12,7 +12,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.*;
 
 @CrossOrigin
-@RestController("/tictactoe")
+@RestController
+@RequestMapping("/tictactoe")
 public class TttController {
 
     Result result;
