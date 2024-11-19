@@ -10,51 +10,61 @@
             margin: 0;
             font-family: Arial, sans-serif;
             background-color: #F6FCDF;
-        }
-        .main-pane{
             display: flex;
-            right: 250px;
-            top: 200px;
-            justify-content: center;
-            align-content: center;
-            position: absolute;
-            padding-top: 50px;
+            flex-direction: column;
         }
+
+        .main-pane {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            margin: auto;
+        }
+
         .game-board {
             display: grid;
-            grid-template-columns: repeat(3, 100px);
-            grid-template-rows: repeat(3, 100px);
+            grid-template-columns: repeat(3, 1fr); /* Flexible column sizes */
+            grid-template-rows: repeat(3, 1fr); /* Flexible row sizes */
             gap: 5px;
-            padding-right: 100px;
+            width: 90vw; /* Adjust width for mobile screens */
+            max-width: 300px; /* Prevent it from growing too large */
         }
+
         .cell {
-            width: 100px;
-            height: 100px;
+            flex: 1 1 auto;
+            width: 100%;
+            aspect-ratio: 1; /* Maintain square shape */
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 2em;
+            font-size: 1.5em; /* Slightly smaller for mobile */
             cursor: pointer;
             background-color: #fff;
             border: 1px solid #333;
         }
+
         .status {
-            font-size: 1.2em;
+            font-size: 1em; /* Smaller font for mobile */
             color: #333;
             text-align: center;
-            padding-right: 100px;
+            margin: 10px 0; /* Add margin for spacing */
         }
+
         .reset {
             background-color: #117554; /* Green */
             border: none;
             color: white;
-            padding: 15px 32px;
+            padding: 10px 20px;
             text-align: center;
             text-decoration: none;
             display: inline-block;
-            font-size: 16px;
-            height: 50px;
+            font-size: 14px; /* Smaller for mobile */
+            margin: 10px auto; /* Center on smaller screens */
+            border-radius: 5px; /* Rounded corners for better aesthetics */
         }
+
         header {
             background-color: #117554;
             color: white;
@@ -62,16 +72,42 @@
             text-align: center;
             font-size: 1.5em;
         }
+
         footer {
             background-color: #117554;
             color: white;
             text-align: center;
             padding: 1em;
-            position: absolute;
-            bottom: 0;
+            position: relative;
             width: 100%;
         }
+
+        /* Responsive Adjustments */
+        @media (max-width: 600px) {
+            .game-board {
+                width: 80vw; /* Smaller width for very small screens */
+                max-width: none; /* Remove fixed maximum width */
+            }
+
+            .cell {
+                font-size: 1.2em; /* Smaller text for better fit */
+            }
+
+            .status {
+                font-size: 0.9em;
+            }
+
+            .reset {
+                font-size: 12px;
+                padding: 8px 16px;
+            }
+
+            header, footer {
+                font-size: 1.2em;
+            }
+        }
     </style>
+
 </head>
 <body>
 <header>
