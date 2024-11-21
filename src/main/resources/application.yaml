@@ -1,0 +1,6 @@
+server:
+  tomcat:
+    max-connections: 10
+    connection-timeout: 30
+    threads:
+      max: 20
